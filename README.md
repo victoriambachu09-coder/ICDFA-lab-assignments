@@ -1,5 +1,6 @@
 # GRC102 – Information Security Governance
-## Lab 5 Submission
+## Lab 5 Submission – GlobalHealth Connect
+
 **Student:** Victoria Onyekachi Mbachu
 
 **Course:** GRC102 – Information Security Governance
@@ -12,17 +13,16 @@
 
 # TASK 1: The Governance Blueprint
 
-## Deliverable 1.1 – My Proposed Security Governance Structure
+## Proposed Security Governance Structure
 
-When I looked at the current GHC org chart, the first thing I noticed was that nobody actually owns security. John Smith in IT does some security-related work on top of his regular IT job, but that's not the same thing. Security being buried inside IT Operations is a problem. It means security decisions get filtered through an IT lens, and business leaders like Marcus or Elena never really engage with it directly.
+The current GHC structure has no dedicated security function. John Smith handles some security tasks as part of his IT role, but that is not enough for a company that manages patient health records. Security needs its own place in the organisation with clear authority.
 
-What I decided to do is this. I want to pull security out of IT and put the Director of ISG (me) directly under Sarah Chen. This would ensure access. If I report to the CEO, I can actually get things done across departments. If I report to IT, I'm just another person in the IT chain.
+The proposed structure places the Director of Information Security Governance (ISG) directly under the CEO. This gives security the authority to work across all departments. A Security Steering Committee (SSC) is also created to bring Finance, Technology, Legal, and HR into security decisions.
 
-I also want to create a Security Steering Committee (SSC) that includes people from Finance, Tech, Legal, and HR. 
 ```mermaid
 graph TD
     A[Board of Directors\nAudit & Risk Committee] --> B(CEO – Sarah Chen)
-    B --> ISG[Director of ISG – Me]
+    B --> ISG[Director of ISG]
     B --> C(CFO – Marcus Thorne)
     B --> D(CTO – Elena Rodriguez)
     B --> E(Head of Sales)
@@ -48,189 +48,203 @@ graph TD
     style A fill:#4a235a,color:#fff
 ```
 
+**Key decisions:**
+
+- The Director of ISG reports to the CEO so security has the authority to act across all departments without interference.
+- The Board Audit Committee receives direct security updates, which addresses David Miller's request for clear accountability.
+- The SSC includes the CFO, CTO, Compliance, IT, and HR so all departments share responsibility for security decisions.
+- Three sub-teams handle Policy, Risk, and Training so the workload is shared as GHC grows.
+
 ---
 
 ## RACI Matrix
 
-**Quick legend:** R = Responsible | A = Accountable | C = Consulted | I = Informed
+R = Responsible (does the work) | A = Accountable (owns the result) | C = Consulted (gives input) | I = Informed (told of outcome)
 
-| Activity | Me (Director ISG) | Sarah (CEO) | Marcus (CFO) | Elena (CTO) | John (IT) | Mark (Compliance) | Board |
+| Activity | Director ISG | CEO (Sarah) | CFO (Marcus) | CTO (Elena) | IT (John) | Compliance (Mark) | Board |
 |---|---|---|---|---|---|---|---|
 | Approving security policies | R | A | C | C | C | C | I |
-| Running a risk assessment | R/A | I | C | C | C | C | I |
+| Running risk assessments | R/A | I | C | C | C | C | I |
 | Incident response planning | A | I | C | C | R | C | I |
 | Security awareness training | A | I | I | C | C | R | I |
 | HIPAA/GDPR compliance monitoring | C | I | C | C | C | R/A | I |
 | Approving the security budget | C | A | R | C | I | I | I |
 | Reporting to the Board | R/A | C | I | I | I | C | I |
-| Reviewing security on new projects | R/A | I | I | A | C | C | I |
+| New project security review | R/A | I | I | A | C | C | I |
 
 ---
 
 # TASK 2: The Security Charter
 
-## Deliverable 2.1 – GHC Information Security Charter
+## GHC Information Security Charter
 
 ---
 
 # GlobalHealth Connect – Information Security Charter
 
 **Reference:** GHC-ISG-CHR-001
+
 **Version:** 1.0
+
 **Date:** March 6, 2026
 
 ---
 
 ## 1. Purpose
 
-GHC handles health records for over 500 clinics. That's a lot of sensitive patient data sitting in our systems every single day. One serious breach doesn't just hurt us financially — it breaks the trust that our entire business is built on. Clinics chose us because they believe we'll keep patient data safe. We need a formal security programme to back that up, not just good intentions.
+GHC manages health records for over 500 clinics. That data belongs to real patients and must be protected. A breach would damage client trust, expose GHC to heavy regulatory fines, and hurt the company's reputation.
 
-This charter sets up that programme. It defines what we're doing, who's responsible, and what authority I have to actually enforce things. It also replaces all the ad-hoc security habits we've picked up from the startups we've acquired — those need to go.
+This charter formally creates GHC's Information Security Programme. It sets out what the programme covers, who is responsible, and what authority it has to enforce security across the company.
 
 ---
 
 ## 2. Scope
 
-This covers everything:
+This charter applies to:
 
-- All patient data (PHI), employee records, financial data, and company IP
-- Every GHC employee, contractor, and vendor with access to our systems
-- All our systems — cloud, on-premise, developer environments, mobile devices, and the SaaS tools we use day-to-day
-- Our US operations (HIPAA applies) and any processing of EU patient data (GDPR applies)
-- Both acquired companies — they need to align to this charter within 6 months of acquisition
+- All patient data (PHI), employee records, financial data, and company intellectual property
+- All GHC staff, contractors, and third-party vendors with system access
+- All GHC systems including cloud platforms, development environments, and business software
+- All US operations under HIPAA and any processing of EU citizen data under GDPR
+- All acquired companies, which must align to this charter within 6 months of acquisition
 
 ---
 
 ## 3. Authority
 
-The Board of Directors gives the Information Security Programme formal authority to:
+The Board of Directors grants the Information Security Programme authority to:
 
-- Write, publish, and enforce security policies across every department
-- Run or commission security audits, risk assessments, and penetration tests on any GHC system
-- Require teams to fix security problems within agreed timeframes — and escalate to the CEO if they don't
-- Review and approve or flag any new technology, vendor, or acquisition before it goes live
+- Create and enforce security policies across all departments
+- Conduct security audits, risk assessments, and penetration tests on any GHC system
+- Require teams to fix identified security issues within agreed timeframes
+- Review all new technologies, vendor contracts, and acquisitions before they go live
 
-As Director of ISG, I hold this authority. I report to Sarah Chen (CEO) and have a direct line to the Board's Audit Committee.
+The Director of ISG holds this authority and reports to the CEO, with direct reporting to the Board Audit Committee.
 
 ---
 
 ## 4. Roles and Responsibilities
 
-| Person/Group | What they're responsible for |
+| Role | Responsibility |
 |---|---|
-| Board / Audit Committee | Oversight, approving the charter, receiving quarterly security updates |
-| Sarah Chen (CEO) | Approves the charter and annual security plan; sets the tone from the top |
-| Me (Director ISG) | Run the whole programme; chair the SSC; report to the Board; own risk management |
-| Marcus Thorne (CFO) | Approves the security budget; makes sure financial risk is understood |
-| Elena Rodriguez (CTO) | Makes sure security is baked into development from the start |
-| Mark Johnson (Compliance) | Tracks HIPAA, GDPR, and HITECH requirements; manages audits |
-| John Smith (IT Manager) | Implements the technical controls; manages patching and vulnerability fixes |
-| All GHC staff | Follow the policies, complete training, and report anything suspicious |
+| Board / Audit Committee | Oversight and approval of the charter; receives quarterly security reports |
+| CEO – Sarah Chen | Approves the charter and annual security plan |
+| Director of ISG | Runs the programme; chairs the SSC; reports to the Board |
+| CFO – Marcus Thorne | Approves the security budget; manages financial risk |
+| CTO – Elena Rodriguez | Ensures security is built into all development work |
+| Compliance – Mark Johnson | Monitors HIPAA, GDPR, and HITECH requirements |
+| IT Manager – John Smith | Implements technical controls and manages patching |
+| All Staff | Follow policies, complete training, and report security concerns |
 
 ---
 
 ## 5. Key Principles
 
-These are the things I want to guide how we do security at GHC:
-
-1. **Risk first:** We focus effort where the actual risk is, not just where it's easiest.
-2. **Security should help the business, not slow it down:** Elena's concern about developer productivity is valid. Security that creates workarounds defeats itself.
-3. **Compliance is the minimum:** HIPAA and GDPR tell us the floor. We should aim higher.
-4. **Build it in from the start:** Security added after the fact is always worse and more expensive than security built in from day one.
-5. **Keep improving:** Threats change. What works today might not work next year. We review and update constantly.
-6. **Everyone owns it:** Security isn't just my job. Every person at GHC plays a role.
+1. Focus security effort on the highest risks first.
+2. Security should support business goals, not block them.
+3. Regulatory compliance is the minimum standard, not the target.
+4. Security must be built into new products from the beginning.
+5. The programme is reviewed and improved on a regular schedule.
+6. Every employee shares responsibility for security.
 
 ---
 
 ## 6. Reporting
 
-- I give Sarah a monthly security update
-- I present a quarterly security report to the Board's Audit Committee — covering incidents, risks, compliance, and programme progress
-- If there's a serious incident involving patient data, I tell Sarah within 24 hours and the Board within 72 hours
-- Every year, I do a full programme review with the Board to set the next year's direction and budget
+- The Director of ISG provides a monthly update to the CEO.
+- A quarterly security report goes to the Board Audit Committee.
+- Any serious incident involving patient data is reported to the CEO within 24 hours and the Board within 72 hours.
+- A full annual programme review is presented to the Board each year.
 
 ---
 
 ## 7. Review and Approval
 
-I'll review this charter every year, or sooner if something big changes — like a major acquisition, a new regulation, or a serious breach. Any changes need CEO sign-off and Board ratification.
+This charter is reviewed every year or after any major change such as an acquisition, new regulation, or serious breach. Changes require CEO approval and Board ratification.
 
 ---
 
 **Effective Date:** March 6, 2026
+
 **Approved By:** Sarah Chen, CEO
-**Reviewed By:** Marcus Thorne, CFO | David Miller, Board
+
+**Reviewed By:** Marcus Thorne, CFO | David Miller, Board Member
 
 ---
 
-## Deliverable 2.2 – Memo to Marcus Thorne (CFO)
+## Memo to Marcus Thorne (CFO)
 
 **To:** Marcus Thorne, CFO
-**From:** [Your Name], Director of Information Security Governance
+
+**From:** Victoria Onyekachi Mbachu, Director of ISG
+
 **Date:** March 6, 2026
-**Re:** Why the Security Charter makes financial sense
 
-Marcus, I know your concern is accountability and making sure every dollar spent on security has a clear reason behind it. That's exactly what this charter gives you. Right now, security spending at GHC is ad-hoc — requests come in, money gets spent, but there's no formal structure tying it to business outcomes. The charter changes that. Every security investment now sits inside a defined programme with documented authority, scope, and reporting. You'll be able to see what we're spending, why, and what risk it's addressing.
+**Re:** Security Charter: Alignment with GHC Strategy
 
-The financial case is also straightforward. A HIPAA violation can run into the tens of millions in fines, on top of the cost of breach notification, legal fees, and client loss. The charter directly supports our Goal 5 (regulatory excellence) and Goal 3 (customer trust) — both of which protect GHC's revenue. I'd rather spend a defined, justified budget on security now than explain to the Board why we didn't after a breach.
+The Information Security Charter provides the clear mandate and accountability structure that GHC currently lacks. Every security decision and expenditure will sit within a documented programme with defined authority and reporting obligations. This gives the Finance team visibility into what is being spent on security and why.
+
+The business case is clear. HIPAA violations can result in fines of tens of millions of dollars, plus breach notification costs and client loss. The charter directly supports GHC's Goal 3 (customer trust) and Goal 5 (regulatory excellence), both of which protect company revenue. A structured security programme is a financial risk management tool, not just a technical one.
 
 ---
 
 # TASK 3: Board Reporting and Metrics
 
-## Deliverable 3.1 – Board Security Report
+## Board Security Report
 
 ---
 
 # Information Security Report – Board of Directors
 
 **Period:** September 2025 – February 2026
-**Prepared by:** [Your Name], Director of Information Security Governance
+
+**Prepared by:** Victoria Onyekachi Mbachu, Director of ISG
+
 **Date:** March 6, 2026
 
 ---
 
 ## 1. Overall Security Posture: RED
 
-I'm not going to sugarcoat this. Our security posture is in bad shape right now, and the data from the last six months makes that clear. Attacks are increasing, we're patching less of what we find, and incidents are climbing every single month. The good news is that we caught this before something serious happened. The new governance programme is specifically built to fix these trends — but the Board needs to understand where we actually stand.
+GHC's current security posture is rated RED. Over the past six months, security threats have increased while the ability to address them has declined. Incidents are rising every month. The new governance programme is designed to reverse these trends, but the Board must understand the current position first.
 
 ---
 
 ## 2. Key Security Metrics
 
-| Metric | Feb 2026 (Latest) | Trend Over 6 Months | What this means |
+| Metric | Feb 2026 | 6-Month Trend | Commentary |
 |---|---|---|---|
-| **High-Risk Incidents** | 7 per month | Getting worse every month | We went from 2 incidents in September to 7 in February — 250% growth. Each one of these is a situation where patient data could have been exposed. This is the number I'm most worried about. |
-| **Patching Compliance (Critical Vulns)** | 55% | Falling steadily | We're only fixing 55% of the critical security holes we find — and we're finding more of them (40 in February vs. 15 in September). The ones we don't fix are open doors for attackers. |
-| **Phishing Attempts** | 320 per month | More than doubled | In September we saw 150 phishing attempts. By February it was 320. Volume alone increases the chance one gets through, especially when 30% of staff haven't done security training. |
-| **Staff Security Training Completion** | 70% | Improving | This is our only positive trend — up from 45% to 70%. But 30% of our staff who handle patient records still haven't completed training. Not good enough yet. |
-| **Malware Detections** | 50 per month | Doubled | Malware went from 25 to 50 detections per month. This tracks directly with the phishing increase and the patching gap — both create pathways for malware to get in. |
+| High-Risk Incidents | 7 per month | Worsening | Up from 2 in September, a 250% increase. Each incident is a potential patient data exposure and a possible HIPAA notification event. |
+| Critical Patching Compliance | 55% | Declining | Only 55% of critical vulnerabilities are being fixed. The backlog has grown from 15 to 40 per month. Unpatched systems are the most common entry point for attackers. |
+| Phishing Attempts | 320 per month | Worsening | More than doubled from 150 in September. Higher volume increases the chance of a successful attack, especially with incomplete staff training. |
+| Security Training Completion | 70% | Improving | The only positive trend. Up from 45%, but 30% of staff handling patient data remain untrained. |
+| Malware Detections | 50 per month | Worsening | Doubled from 25. Directly linked to rising phishing volumes and low patching rates. |
 
 ---
 
 ## 3. Key Risks
 
-- **We're losing ground on patching:** The gap between vulnerabilities found and vulnerabilities fixed is growing every month. We have a backlog of known, unpatched critical weaknesses. Every day those stay open, we're exposed to exploitation.
-- **Almost a third of staff can't recognise a phishing attack:** 30% of GHC employees haven't completed security training, and phishing is the number one way attackers get into systems like ours. One successful phish on the right account could trigger a HIPAA breach notification.
+- **Vulnerability backlog:** The number of unpatched critical vulnerabilities is growing faster than the team can fix them. These are known weaknesses that attackers can exploit.
+- **Untrained staff:** 30% of GHC employees have not completed security training. Phishing is the most common attack method, and untrained staff are the most likely to fall for it.
 
 ---
 
 ## 4. Recommendations
 
-- **Emergency patching sprint:** I'm asking the Board to support a 30-day push to get critical vulnerability patching to 90%. This means giving IT the resource to focus on it. I'll report progress weekly.
-- **Mandatory training deadline with Board backing:** I want to set April 30 as the non-negotiable deadline for 100% training completion. I'll also run monthly phishing simulations so we can test whether the training is actually working, not just whether people clicked "complete."
+- **30-day patching sprint:** Assign dedicated IT resource to clear the critical vulnerability backlog and reach 90% patching compliance by April 30, 2026.
+- **Mandatory training deadline:** Set April 30, 2026 as the deadline for 100% training completion, backed by Board authority. Begin monthly phishing simulations to measure whether training is working.
 
 ---
 
-## Deliverable 3.2 – Why I Picked These Five Metrics
+## Deliverable 3.2 – Rationale for Metric Selection
 
-I picked these five because together they tell the full cause-and-effect story. Phishing and malware show what's being thrown at us from outside. Patching compliance and training completion show how prepared we are to handle it. High-risk incidents show the result when the first two go up and the second two go down. A Board member doesn't need a technical background to follow that logic — it's just: threats are rising, defences are weakening, and incidents are the outcome. I left out raw technical data like firewall alert volumes or SIEM counts because those numbers don't mean anything to the people in that room and they'd just create noise around the real story.
+The five metrics were chosen because they show the full picture from threat to impact. Phishing and malware show the level of external threat. Patching compliance and training completion show how well GHC can defend against that threat. High-risk incidents show what happens when threats are high and defences are low. Together they give the Board a clear, business-level view of security health without requiring technical knowledge. Raw technical data such as firewall logs or SIEM alerts were excluded because they do not communicate risk in a way that supports Board-level decisions.
 
 ---
 
 # TASK 4: The Security Steering Committee
 
-## Deliverable 4.1 – SSC Terms of Reference
+## SSC Terms of Reference
 
 ---
 
@@ -244,23 +258,20 @@ I picked these five because together they tell the full cause-and-effect story. 
 
 ## 1. Purpose
 
-The SSC exists because security decisions at GHC can't be made by one person in isolation. They affect developers, finance, compliance, HR — everyone. The SSC gives all those people a seat at the table so that when we make a security call, it's been looked at from every angle and everyone is on board with the outcome.
-
-It also gives us a proper place to resolve disputes — like the current password policy disagreement between Elena and John — rather than pushing everything up to Sarah.
+The SSC provides a forum where senior leaders from across GHC make security decisions together. It ensures that security policy is aligned with business needs, that conflicts between departments are resolved fairly, and that security investment is approved with full business context.
 
 ---
 
 ## 2. Scope
 
-The SSC handles:
+The SSC oversees:
 
-- Approving and updating security policies
-- Reviewing and prioritising the risk register
-- Resolving conflicts between security requirements and business operations
-- Approving the security budget within agreed limits
-- Overseeing the response to major incidents
-- Reviewing security for new products, vendors, and acquisitions
-- Tracking progress on the security programme roadmap
+- Approval and review of security policies
+- Review and prioritisation of the risk register
+- Resolution of conflicts between security and business operations
+- Approval of security budget requests
+- Oversight of major incident responses
+- Security review of new products, vendors, and acquisitions
 
 ---
 
@@ -268,225 +279,205 @@ The SSC handles:
 
 | Role | Member | Status |
 |---|---|---|
-| Chair | Director of ISG (me) | Permanent |
-| Business Co-Sponsor | CEO – Sarah Chen (or delegate) | Permanent |
+| Chair | Director of ISG | Permanent |
+| Co-Sponsor | CEO – Sarah Chen | Permanent |
 | Finance | CFO – Marcus Thorne | Permanent |
 | Technology | CTO – Elena Rodriguez | Permanent |
 | IT Operations | IT Manager – John Smith | Permanent |
-| Compliance | Compliance Officer – Mark Johnson | Permanent |
-| HR | HR Manager – Robert Green | Permanent |
-| Guest / Expert | Invited as needed | Ad hoc |
+| Compliance | Mark Johnson | Permanent |
+| HR | Robert Green | Permanent |
+| Subject Matter Expert | Invited as needed | Ad hoc |
 
-If a permanent member misses two meetings in a row without sending someone in their place, I'll flag it to Sarah.
-
----
-
-## 4. What Members Are Expected to Do
-
-- Read the agenda and pre-materials before each meeting (I send them 5 days in advance)
-- Represent their department's real concerns — not just what sounds good in the room
-- Back SSC decisions within their own teams after the meeting
-- Own the action items they're assigned
+Permanent members who miss two consecutive meetings without sending a delegate will be escalated to the CEO.
 
 ---
 
-## 5. How and When We Meet
+## 4. Member Responsibilities
 
-- **Regular meetings:** Once a month, dates set at the start of the year
-- **Emergency meetings:** I can call one with 48 hours' notice if something urgent comes up
-- **Quorum:** We need at least 4 permanent members (including me and at least one of CEO/CFO/CTO) for a decision to be binding
-- **Minutes:** Written up within 5 business days and shared with all members
-- **Format:** In-person or virtual — whichever works, as long as quorum is met
+- Review agenda materials sent five business days before each meeting.
+- Represent their department's perspective honestly.
+- Support and communicate SSC decisions within their own teams.
+- Complete assigned action items by agreed deadlines.
+
+---
+
+## 5. Meeting Cadence
+
+- Monthly scheduled meetings with dates set at the start of each year.
+- Emergency meetings can be called by the Chair with 48 hours notice.
+- Quorum requires four permanent members including the Chair and at least one of CEO, CFO, or CTO.
+- Minutes are distributed within five business days of each meeting.
 
 ---
 
 ## 6. Decision-Making
 
-- The SSC can approve, change, or retire any security policy under the charter
-- We can formally accept risks up to a threshold I'll define in the Risk Management Standard — bigger risks go to the CEO or Board
-- We can approve spending within the agreed annual budget; anything above a defined threshold goes to Marcus and Sarah
-- For disputes (like the password policy), both sides present, we discuss, then vote — simple majority wins, I have the casting vote in a tie
-- If we can't agree and the stakes are high enough, I escalate to Sarah with my recommendation
+- The SSC approves, amends, or retires security policies within the scope of the charter.
+- Risks below the defined threshold can be formally accepted by the SSC. Higher risks go to the CEO or Board.
+- Spending within the approved annual budget can be approved by the SSC. Requests above the defined limit go to the CFO and CEO.
+- For conflicts, both sides present their case, the SSC discusses, and a majority vote decides. The Chair holds the casting vote in a tie.
+- Unresolved matters are escalated to the CEO with a recommendation from the Chair.
 
 ---
 
 ## 7. Reporting
 
-- I send Sarah a monthly summary of what the SSC decided and what's still open
-- The quarterly Board security report includes an SSC activity summary
-- All major decisions are minuted and retained for audit purposes
+- The Chair sends the CEO a monthly summary of decisions and open actions.
+- A quarterly SSC summary is included in the Board security report.
+- All major decisions are formally minuted and retained for audit purposes.
 
 ---
 
-## Deliverable 4.2 – Sample SSC Meeting Agenda (First Meeting)
+## SSC Meeting Agenda
 
 ---
 
 # GHC Security Steering Committee – Inaugural Meeting Agenda
 
 **Date:** March 20, 2026
+
 **Time:** 10:00 AM – 12:00 PM
-**Location:** GHC Boardroom / Teams (Hybrid)
-**Chair:** [Your Name], Director of ISG
+
+**Location:** GHC Boardroom / MS Teams
+
+**Chair:** Victoria Onyekachi Mbachu, Director of ISG
+
 **Attendees:** Sarah Chen, Marcus Thorne, Elena Rodriguez, John Smith, Mark Johnson, Robert Green
 
 ---
 
-**1. Welcome (10 min)**
-I'll open the meeting, explain what the SSC is for, and walk through the Terms of Reference. We'll formally adopt the ToR as our founding document.
+**1. Welcome and Introductions (10 min)**
+Overview of the SSC mandate. Formal adoption of the Terms of Reference.
 
-**2. Current Security Posture (15 min)**
-Quick summary of where we stand — the RED posture, the rising incident trend, and why this committee needs to move fast.
+**2. Security Posture Update (15 min)**
+Summary of the Board Security Report. Current RED status, key trends, and immediate priorities.
 
-**3. PASSWORD POLICY DISPUTE – Main Agenda Item (40 min)**
+**3. Password Policy Dispute (40 min)**
 
-This is the main business of today's meeting. Here's how I'll run it:
+This is the main discussion item for this meeting.
 
-- **John Smith (10 min):** Makes the case for the proposed policy — what threat it addresses and why those specific requirements were chosen.
-- **Elena Rodriguez (10 min):** Presents the developer impact and her alternative approach — MFA combined with a password manager.
-- **Open discussion (15 min):** Everyone weighs in. I'll bring in NIST guidance here: NIST SP 800-63B actually recommends against forcing frequent password changes and supports passphrases + MFA as more effective. This isn't John vs. Elena — it's a chance to land on what actually works.
-- **Vote and decision (5 min):** We decide. My proposed resolution going in: 14-character minimum passphrase, no mandatory 30-day rotation, mandatory enterprise password manager, MFA required on all systems that touch PHI within 60 days.
+- John Smith presents the proposed policy and the security rationale behind it. (10 min)
+- Elena Rodriguez presents the developer impact and her alternative proposal using MFA and a password manager. (10 min)
+- Open discussion from all members. The Chair will share NIST SP 800-63B guidance, which supports long passphrases and MFA over frequent password changes. (15 min)
+- Vote and decision. (5 min)
 
-**4. Top Security Risks – First Look (15 min)**
-I'll share the initial risk list. We'll assign owners to each item.
+Proposed resolution for discussion: 14-character minimum passphrase, no mandatory 30-day rotation, mandatory enterprise password manager, and MFA required on all systems handling PHI within 60 days.
+
+**4. Initial Risk Register Review (15 min)**
+Top five organisational risks presented for awareness. Risk owners assigned.
 
 **5. Training Completion Deadline (10 min)**
-Proposal: 100% mandatory completion by April 30, 2026. Robert and Elena to confirm feasibility.
+Proposal: 100% mandatory completion by April 30, 2026. Robert Green and Elena Rodriguez to confirm feasibility.
 
 **6. Any Other Business (5 min)**
 
-**7. Actions and Close (5 min)**
-I'll summarise every action item, who owns it, and when it's due. Next meeting: April 17, 2026.
+**7. Action Items and Close (5 min)**
+All actions confirmed with owners and deadlines. Next meeting: April 17, 2026.
 
 ---
 
-*Pre-reading: Board Security Report | Draft Password Policy | SSC Terms of Reference*
+*Pre-reading required: Board Security Report | Draft Password Policy | SSC Terms of Reference*
 
 ---
 
 ## Deliverable 4.3 – Briefing Note to Sarah Chen
 
 **To:** Sarah Chen, CEO
-**From:** [Your Name], Director of ISG
+
+**From:** Victoria Onyekachi Mbachu, Director of ISG
+
 **Date:** March 6, 2026
-**Re:** How the SSC handles disputes like the password policy situation
 
-The Elena/John situation is a perfect example of what happens when security decisions are made between two people with different priorities — neither budges, the problem doesn't get resolved, and it ends up on your desk. The SSC stops that from becoming the default pattern.
+**Re:** How the SSC resolves cross-departmental security conflicts
 
-In practice: instead of those two going back and forth over email, they both get 10 minutes to make their case in front of the full committee. Marcus hears the financial risk angle, Mark weighs in on compliance, Robert flags any HR implications, and I bring in the evidence-based guidance. Then we vote. The outcome has the backing of the whole committee, both parties got a fair hearing, and neither of them needs to escalate to you. More importantly, when Elena knows she has a permanent seat at the SSC, she's more likely to raise security concerns early — before they turn into standoffs.
+The password policy dispute between Elena Rodriguez and John Smith is a good example of what happens when security decisions are made without a structured process. Both parties have valid points, but without a neutral forum, the disagreement escalates and lands on the CEO's desk.
+
+The SSC solves this. Both sides present their case to a full committee that includes Finance, Legal, and HR. All perspectives are heard, a decision is reached by vote, and it is documented. The outcome carries the authority of the whole committee, not just one department. This keeps security conflicts out of the CEO's inbox and ensures that decisions reflect the needs of the whole business.
 
 ---
 
 # TASK 5: Governance Maturity Assessment
 
-## Deliverable 5.1 – Maturity Assessment Table
+## Maturity Assessment Table
 
-I scored each domain based on the interview excerpts. Here's my thinking for each one:
-
-| Governance Domain | Score (1–5) | Why I gave it this score |
+| Governance Domain | Score (1–5) | Justification |
 |---|---|---|
-| **Policy & Documentation** | **2 – Initial** | Policies exist, but they're a patchwork left over from acquisitions. Nobody's consolidated or updated them. Some are inconsistent with each other. Something's there on paper, but it's not actually being used consistently — that's Level 2. |
-| **Roles & Responsibilities** | **1 – Ad Hoc** | The HR Manager said it directly: ownership is "fuzzy." Nobody knows who's responsible for what in security. This is the definition of Level 1 — no defined process, just whoever cares enough that day. |
-| **Risk Management** | **2 – Initial** | Marcus confirmed GHC reacts to incidents instead of getting in front of them. There's some awareness that risks exist, but no formal process, no register, nothing proactive. Level 2. |
-| **Metrics & Reporting** | **2 – Initial** | Technical data is being tracked, but my predecessor admitted they couldn't translate it for the Board. The data exists; useful reporting doesn't. Level 2. |
-| **Training & Awareness** | **2 – Initial** | Mandatory annual training pushes it above Level 1. But 45% completion six months ago and a "checkbox" mentality means the training isn't actually building security awareness. Level 2. |
-| **Compliance** | **2 – Initial** | Mark is doing compliance work, so there's something there. But "scrambling when auditors show up" is not a compliance programme — it's reactive damage control. No continuous monitoring means Level 2. |
+| Policy & Documentation | 2 | Policies exist but were inherited from acquired companies. They are inconsistent, outdated, and not actively maintained. Some documentation exists but it is not standardised or followed consistently. |
+| Roles & Responsibilities | 1 | The HR Manager confirmed that security ownership is unclear. Nobody knows who is responsible for what. There are no defined roles, no RACI, and no accountability structure in place. |
+| Risk Management | 2 | GHC responds to incidents after they happen but has no formal proactive risk process. No risk register exists. Some awareness is present but nothing is structured or documented. |
+| Metrics & Reporting | 2 | Technical metrics are tracked but cannot be translated into business language for Board reporting. Data exists but meaningful reporting does not. |
+| Training & Awareness | 2 | Annual training is mandatory, which places GHC above Level 1. However, completion was only 45% six months ago and engagement is low. The programme is treated as a checkbox rather than a genuine awareness effort. |
+| Compliance | 2 | The Compliance Officer manages regulatory requirements, but the team scrambles during audits rather than monitoring continuously. Compliance is reactive, not sustained. |
 
-**Overall: ~1.8 out of 5. We're at the lower end of Level 2 across the board, with Roles & Responsibilities at Level 1.**
-
----
-
-## Deliverable 5.2 – 12–18 Month Roadmap to Level 3
+**Overall maturity: approximately 1.8 out of 5.**
 
 ---
 
-### Initiative 1: Build a Real Policy Library
-
-**Objective:** Replace the inconsistent inherited policy mess with one clean, approved set of policies that everyone at GHC can actually find and use.
-
-**Key activities:**
-- Audit all inherited policies — identify overlaps, contradictions, and gaps
-- Write the core policy set: Acceptable Use, Access Control, Data Classification, Incident Response, Password Management, Vendor Security
-- Review through the SSC and get Sarah's sign-off
-- Post everything on the intranet with version dates and annual review schedules
-
-**Expected outcome:** All core policies approved and published within 6 months. "I didn't know what the policy was" stops being a valid excuse.
+## Roadmap to Level 3 (12 to 18 Months)
 
 ---
 
-### Initiative 2: Stand Up a Proper Risk Management Process
+**Initiative 1: Build a Complete Policy Library**
 
-**Objective:** Move from reacting to incidents to actually knowing our risks and managing them deliberately.
+Objective: Replace all inherited and inconsistent policies with one approved set that every GHC employee can access and follow.
 
-**Key activities:**
-- Write a Risk Management Standard — how we score risks, what's acceptable, when to escalate
-- Run the first full enterprise risk assessment within 90 days
-- Build a live risk register reviewed at every SSC meeting
-- Assign a named owner to every risk on the register
+Key activities: Audit all existing policies from GHC and acquired companies. Write a core policy set covering Acceptable Use, Access Control, Data Classification, Incident Response, Password Management, and Vendor Security. Get approval through the SSC and CEO. Publish on the company intranet with review dates.
 
-**Expected outcome:** First risk assessment done and presented to the Board within 90 days. Risk register becomes a standing SSC agenda item — not a one-time exercise.
+Expected outcome: All core policies approved and published within 6 months. Policy coverage moves from inconsistent to complete.
 
 ---
 
-### Initiative 3: Make Ownership Clear
+**Initiative 2: Implement a Formal Risk Management Process**
 
-**Objective:** Get rid of the "fuzzy" responsibility problem. Every person in a security-relevant role should know exactly what they own.
+Objective: Move from reacting to incidents to identifying and managing risks before they become problems.
 
-**Key activities:**
-- Publish the RACI matrix from Task 1 as an official GHC document
-- Work with HR to update job descriptions to include security responsibilities
-- Run a 30-minute briefing with all managers
-- Add security responsibility to annual performance reviews
+Key activities: Write a Risk Management Standard that defines how risks are scored and when to escalate. Conduct the first enterprise risk assessment within 90 days. Create a live risk register reviewed monthly at the SSC. Assign a named owner to every risk.
 
-**Expected outcome:** RACI approved and job descriptions updated within 90 days. "Who owns this?" becomes a question we can always answer.
+Expected outcome: First risk assessment completed and presented to the Board within 90 days. Risk management becomes a continuous process, not a one-time activity.
 
 ---
 
-### Initiative 4: Fix the Reporting
+**Initiative 3: Clarify Security Roles and Ownership**
 
-**Objective:** Give the Board and SSC security reporting that actually helps them make decisions — not raw technical numbers they can't interpret.
+Objective: Ensure every person in a security-relevant role knows exactly what they are responsible for.
 
-**Key activities:**
-- Use the five-metric Board dashboard from Task 3 as the standard format going forward
-- Automate data collection from our vulnerability scanner, SIEM, and LMS where possible
-- Set fixed cadences: monthly SSC dashboard, quarterly Board report
-- Define target numbers for each metric so we're tracking improvement, not just activity
+Key activities: Publish the RACI matrix as an official GHC document. Update job descriptions to include security responsibilities. Deliver a manager briefing. Add security responsibility to the annual performance review process.
 
-**Expected outcome:** First standardised Board report within 30 days. We have targets, we're measuring against them, and the Board can see whether things are getting better.
+Expected outcome: RACI approved and job descriptions updated within 90 days. Security ownership is clear and documented across the organisation.
 
 ---
 
-### Initiative 5: Make Security Training Worth Doing
+**Initiative 4: Standardise Security Reporting**
 
-**Objective:** Get to 100% completion and — more importantly — actually change how people behave.
+Objective: Give the Board and SSC security reporting that helps them make decisions.
 
-**Key activities:**
-- Replace the annual checkbox session with quarterly short modules on real threats (phishing, data handling, how to report an incident)
-- Run monthly phishing simulations to test whether training is landing
-- Set April 30 as the hard mandatory completion deadline, backed by the Board
-- Report completion rates and phishing sim results at every SSC meeting
+Key activities: Use the five-metric Board dashboard from Task 3 as the standard format. Automate data collection where possible. Set a monthly SSC dashboard and quarterly Board report as fixed deliverables. Define target values for each metric.
 
-**Expected outcome:** 100% training completion by April 30. Phishing simulation click rates down by 50% within 12 months.
+Expected outcome: First standardised Board report delivered within 30 days. Progress is tracked against defined targets, not just reported.
 
 ---
 
-## Deliverable 5.3 – Summary for David Miller (Board Member)
+**Initiative 5: Improve Security Training**
+
+Objective: Reach 100% training completion and change how staff respond to real security threats.
+
+Key activities: Replace the annual session with quarterly short modules on relevant topics. Run monthly phishing simulations. Set April 30 as the mandatory completion deadline. Report results at every SSC meeting.
+
+Expected outcome: 100% training completion by April 30, 2026. Phishing simulation click rates reduced by 50% within 12 months.
+
+---
+
+## Executive Summary for David Miller (Board Member)
 
 **To:** David Miller, Board Member
-**From:** [Your Name], Director of ISG
+
+**From:** Victoria Onyekachi Mbachu, Director of ISG
+
 **Date:** March 6, 2026
-**Re:** GHC security governance maturity — where we are and where I'm taking it
 
-I assessed GHC across six governance domains and the honest answer is: we're sitting at around Level 2 out of 5 across the board, with Roles and Responsibilities at Level 1. What that means in plain terms is that security activity exists at GHC, but it's not organised, not owned clearly, and not consistently applied. Policies are a patchwork left over from acquisitions. Metrics get tracked but can't be explained in business language. Training gets assigned but half the company skips it. This isn't a catastrophe — but it's the kind of foundation where the near-miss we just had was always going to happen eventually.
+**Re:** GHC Security Governance Maturity Assessment
 
-The five-initiative roadmap I'm proposing gets every domain to Level 3 within 12–18 months. Level 3 means documented processes, clear ownership, and consistent execution. It's not the finish line, but it's the baseline you'd expect from any company handling the volume of patient data GHC processes. Every initiative has a deadline, a named owner, and a measurable outcome — so your Committee can track at every quarterly meeting whether we're actually moving, not just hearing that things are "in progress."
+GHC's security governance maturity currently sits at approximately Level 2 out of 5 across most areas, with Roles and Responsibilities at Level 1. In practical terms, this means security activity is happening but it is not organised, not consistently owned, and not producing reliable outcomes. Policies are outdated. Nobody is clear on who owns what. Risk management is reactive. Training is incomplete. This is the environment in which the recent near-miss occurred, and it cannot be the foundation for a company managing patient data at GHC's scale.
 
----
+The proposed roadmap covers five initiatives over 12 to 18 months, each designed to bring a specific area to Level 3. Level 3 means documented processes, clear ownership, and consistent execution. Each initiative has a named owner, a deadline, and a measurable outcome so the Board can track real progress at every quarterly review.
 
-*End of Submission*
-
----
-
-**Document:** Interactive_Lab_GRC102_W5_Submission
-**Course:** GRC102 – Information Security Governance, Week 5
-**Date:** March 6, 2026
